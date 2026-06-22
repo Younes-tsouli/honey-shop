@@ -1,0 +1,39 @@
+/* =====================
+   STRIP — bandeau signature
+===================== */
+.strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--color-text);
+  overflow: hidden;
+  position: relative;
+}
+
+.strip-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.68rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c8b97a;
+  white-space: nowrap;
+}
+
+.strip-item .strip-icon {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.strip-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #4d4430;
+  flex-shrink: 0;
+}

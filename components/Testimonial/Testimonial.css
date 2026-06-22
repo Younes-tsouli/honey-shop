@@ -1,0 +1,43 @@
+/* =====================
+   TESTIMONIAL
+===================== */
+.testimonial {
+  background-color: var(--color-text);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.testimonial-stars {
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.25rem;
+}
+
+.testimonial-quote-mark {
+  font-family: var(--font-headline);
+  font-size: 5rem;
+  line-height: 0.4;
+  color: var(--color-secondary);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.testimonial-text {
+  font-family: var(--font-headline);
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #e8e0c8;
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+}
+
+.testimonial-author {
+  font-size: 0.7rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8a7a50;
+}

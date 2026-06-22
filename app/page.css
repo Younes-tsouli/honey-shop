@@ -1,0 +1,56 @@
+/* =====================
+   CARDS SECTION
+===================== */
+.cards-section {
+  padding: 5rem 4rem;
+  background-color: var(--color-bg);
+}
+
+.cards-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cards-eyebrow {
+  font-size: 0.68rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.cards-section-title {
+  font-family: var(--font-headline);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  .cards-section {
+    padding: 3rem 2rem;
+  }
+  .newsletter-section {
+    flex-direction: column;
+    padding: 3rem 2rem;
+    align-items: flex-start;
+  }
+  .newsletter-right {
+    align-items: flex-start;
+    width: 100%;
+  }
+  .newsletter-email {
+    width: 100%;
+  }
+}

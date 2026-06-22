@@ -1,0 +1,88 @@
+/* =====================
+   INFO CARD
+===================== */
+.info-card {
+  background-color: var(--color-surface);
+  border: 1px solid rgba(176, 125, 20, 0.15);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(115, 92, 0, 0.09);
+  border-color: rgba(255, 191, 0, 0.4);
+}
+
+/* Icône */
+.card-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #e09b00 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(255, 191, 0, 0.25);
+}
+
+.card-icon {
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+
+/* Corps */
+.card-body {
+  flex: 1;
+}
+
+.card-num {
+  font-family: var(--font-headline);
+  font-size: 0.7rem;
+  color: rgba(115, 92, 0, 0.35);
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-family: var(--font-headline);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* Flèche bas de carte */
+.card-arrow {
+  align-self: flex-end;
+  color: var(--color-secondary);
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.info-card:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}

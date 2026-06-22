@@ -1,59 +1,124 @@
-/* Importation des polices Google Fonts définies dans ton projet Stitch */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
 
+/* =====================
+   NAVBAR
+===================== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  height: 4.5rem; 
+
+  width: 100%;
+  height: 4.5rem;
   padding: 0 3rem;
-  background-color: #FDFCF0; /* Ton neutre de fond */
-  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  background-color: rgba(251, 250, 238, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: var(--font-body);
+
+  border-bottom: 1px solid transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* --- GAUCHE : LOGO / TITRE --- */
+/* Scrolled state — add via JS: document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 40) */
+.navbar.scrolled {
+  background-color: rgba(251, 250, 238, 0.97);
+  border-bottom-color: var(--color-border);
+  box-shadow: 0 2px 24px rgba(115, 92, 0, 0.07);
+}
+
+/* =====================
+   LOGO
+===================== */
+.signature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .signature .title {
-  font-family: 'Libre Caslon Text', serif;
-  font-weight: 500;
-  font-size: 1.5rem;
-  color: #D4AF37; /* Couleur jaune/doré primaire */
+  font-family: var(--font-headline);
+  font-weight: 400;
+  font-size: 1.45rem;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
   text-decoration: none;
+  transition: color var(--transition);
+}
+
+.signature .title:hover {
+  color: var(--color-primary);
 }
 
 .signature .bee-span {
-  color: #2D4232;
+  color: var(--color-secondary);
 }
 
-/* --- CENTRE : LIENS --- */
+/* =====================
+   NAV LINKS
+===================== */
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.25rem;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #2D4232; /* Vert foncé textuel */
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color var(--transition);
+  position: relative;
+  padding-bottom: 2px;
 }
 
-.nav-links a:hover, 
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--color-secondary);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
 .nav-links a.active {
-  color: #D4AF37; /* Doré au survol ou page active */
+  color: var(--color-primary);
 }
 
-/* --- DROITE : RECHERCHE & ACTIONS --- */
+/* =====================
+   RIGHT ACTIONS
+===================== */
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
+/* SEARCH */
 .search-container {
   position: relative;
   display: flex;
@@ -61,37 +126,66 @@
 }
 
 .search-container input {
-  background-color: #F5F3E5; /* Fond légèrement grisé pour la barre */
-  border: none;
-  border-radius: 20px;
-  padding: 0.5rem 1rem 0.5rem 2.2rem;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.85rem;
-  color: #2D4232;
-  outline: none;
   width: 180px;
+  background-color: var(--color-surface);
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  padding: 0.45rem 1rem 0.45rem 2.2rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--color-text);
+  outline: none;
+  transition: border var(--transition), background var(--transition), width 0.3s ease;
+}
+
+.search-container input:focus {
+  border-color: var(--color-primary);
+  background-color: #fff;
+  width: 220px;
 }
 
 .search-container input::placeholder {
-  color: #A3A192;
+  color: var(--color-text-muted);
 }
 
 .search-icon {
   position: absolute;
-  left: 0.8rem;
-  color: #A3A192;
+  left: 0.75rem;
+  color: var(--color-text-muted);
   font-size: 1rem;
+  pointer-events: none;
 }
 
-/* --- ICÔNES PANIER & COMPTE --- */
+/* ICON BUTTONS */
 .action-icon {
-  color: #2D4232;
-  font-size: 1.25rem;
   display: flex;
   align-items: center;
-  transition: color 0.2s ease;
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color var(--transition);
+  text-decoration: none;
+  position: relative;
 }
 
 .action-icon:hover {
-  color: #D4AF37;
+  color: var(--color-primary);
+}
+
+/* Cart badge */
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -7px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  font-size: 0.55rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }

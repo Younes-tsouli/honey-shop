@@ -1,0 +1,100 @@
+/* =====================
+   NEWSLETTER CTA
+===================== */
+.newsletter-section {
+  padding: 4rem 4rem;
+  background-color: var(--color-bg);
+  border-top: 1px solid rgba(176, 125, 20, 0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Gauche */
+.newsletter-tag {
+  display: inline-block;
+  background: rgba(176, 125, 20, 0.1);
+  color: var(--color-primary);
+  font-size: 0.65rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.newsletter-title {
+  font-family: var(--font-headline);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.25;
+  max-width: 380px;
+}
+
+/* Droite */
+.newsletter-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+
+.newsletter-input-row {
+  display: flex;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 1px solid rgba(176, 125, 20, 0.28);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.newsletter-input-row:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(115, 92, 0, 0.08);
+}
+
+.newsletter-email {
+  border: none;
+  background-color: var(--color-surface);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  outline: none;
+  width: 220px;
+}
+
+.newsletter-email::placeholder {
+  color: var(--color-text-muted);
+}
+
+.newsletter-submit {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.68rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--transition);
+  white-space: nowrap;
+}
+
+.newsletter-submit:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.newsletter-note {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+}

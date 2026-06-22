@@ -54,20 +54,13 @@ a {
   justify-content: space-between;
 }
 
-/* Style répétitif pour les boutons de l'application */
-.btn {
-  display: inline-flex;
+.flex-column {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-full);
-  border: none;
-  cursor: pointer;
-  transition: all var(--transition-fast);
 }
+
 
 .btn-primary {
   background-color: var(--color-primary);

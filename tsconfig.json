@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "components/Navbar/Navbar.tsx", "components/InfoCard/InfoCard.jsx", "components/Hero/Hero.jsx", "components/Footer/Footer.jsx", "app/page.jsx", "app/layout.jsx"  ],
   "exclude": ["node_modules"]
 }

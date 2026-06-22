@@ -1,1 +1,97 @@
+/* Importation des polices Google Fonts définies dans ton projet Stitch */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  height: 4.5rem; 
+  padding: 0 3rem;
+  background-color: #FDFCF0; /* Ton neutre de fond */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* --- GAUCHE : LOGO / TITRE --- */
+.signature .title {
+  font-family: 'Libre Caslon Text', serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #D4AF37; /* Couleur jaune/doré primaire */
+  text-decoration: none;
+}
+
+.signature .bee-span {
+  color: #2D4232;
+}
+
+/* --- CENTRE : LIENS --- */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #2D4232; /* Vert foncé textuel */
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+  color: #D4AF37; /* Doré au survol ou page active */
+}
+
+/* --- DROITE : RECHERCHE & ACTIONS --- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  background-color: #F5F3E5; /* Fond légèrement grisé pour la barre */
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem 0.5rem 2.2rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #2D4232;
+  outline: none;
+  width: 180px;
+}
+
+.search-container input::placeholder {
+  color: #A3A192;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.8rem;
+  color: #A3A192;
+  font-size: 1rem;
+}
+
+/* --- ICÔNES PANIER & COMPTE --- */
+.action-icon {
+  color: #2D4232;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.action-icon:hover {
+  color: #D4AF37;
+}

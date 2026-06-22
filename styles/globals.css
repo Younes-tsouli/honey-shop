@@ -1,0 +1,91 @@
+@import "./variables.css";
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* --- RESET & ACCESSIBILITÉ --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-neutral-bg);
+  color: var(--color-tertiary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* --- TYPOGRAPHIE RÉPÉTITIVE --- */
+h1, h2, h3, .serif-title {
+  font-family: var(--font-headline);
+  font-weight: 500;
+  color: var(--color-tertiary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+/* --- DESIGN PATTERNS RÉPÉTITIFS (Utility Classes) --- */
+
+/* Conteneur principal pour centrer le contenu du site */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Raccourcis Flexbox alignés au centre très fréquents */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Style répétitif pour les boutons de l'application */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-neutral-bg);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-tertiary);
+}
+
+/* Style répétitif pour les cartes de produits (comme sur ta grille de miel) */
+.card {
+  background-color: transparent;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}

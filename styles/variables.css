@@ -1,0 +1,22 @@
+:root {
+  /* --- COULEURS CORE (Charte Stitch) --- */
+  --color-primary: #D4AF37;     /* Jaune Doré / Primary */
+  --color-secondary: #FFBF00;   /* Jaune Vif / Secondary */
+  --color-tertiary: #2D4232;    /* Vert Sombre / Tertiary */
+  --color-neutral-bg: #FDFCF0;  /* Crème Fond / Neutral */
+  --color-neutral-input: #F5F3E5; /* Fond des champs de saisie */
+  --color-text-muted: #A3A192;  /* Gris/Sable pour placeholders et borders */
+
+  /* --- TYPOGRAPHIE --- */
+  --font-headline: 'Libre Caslon Text', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* --- ARRONDIS (Borders) --- */
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-full: 9999px; /* Idéal pour les inputs rounded, badges, etc. */
+
+  /* --- TRANSITIONS --- */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}

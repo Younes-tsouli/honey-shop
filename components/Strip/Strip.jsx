@@ -2,7 +2,7 @@ import React from "react";
 import "./Strip.css";
 
 const ITEMS = [
-  { icon: "eco", label: "Certifié bio" },
+  { icon: "eco", label: "Bio" },
   { icon: "location_on", label: "Récolte locale" },
   { icon: "local_fire_department", label: "Non chauffé" },
   { icon: "local_shipping", label: "Livraison rapide" },

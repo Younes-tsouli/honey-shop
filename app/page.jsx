@@ -37,7 +37,7 @@ export default function Home() {
           />
           <InfoCard
             num="02"
-            title="Certifié Bio"
+            title="Bio"
             description="Aucun produit chimique ne touche nos ruches ni nos fleurs. Pratiques biologiques certifiées."
             icon={<span className="material-symbols-outlined">eco</span>}
           />

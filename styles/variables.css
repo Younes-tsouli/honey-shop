@@ -24,4 +24,7 @@
   --radius-full: 9999px;
 
   --transition: 0.2s ease;
+
+  /* NAV */
+  --nav-height: 4.5rem;
 }

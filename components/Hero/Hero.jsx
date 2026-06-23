@@ -1,5 +1,6 @@
 import React from "react";
 import "./Hero.css";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -28,8 +29,16 @@ export default function Hero() {
         </p>
 
         <div className="buttons">
-          <button className="btn shop-btn">Nos miels</button>
-          <button className="btn histoir-btn">Notre histoire</button>
+          <button className="btn shop-btn">
+            <Link href="/shop" >
+            Nos miels
+            </Link>
+          </button>
+          <button className="btn histoir-btn">
+            <Link href="/story" >
+            Notre Histoire
+            </Link>
+          </button>
         </div>
       </div>
 

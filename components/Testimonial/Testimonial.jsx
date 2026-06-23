@@ -10,7 +10,7 @@ export default function Testimonial() {
         Un miel d'une qualité rare, au goût authentique. On sent vraiment
         la différence avec un produit industriel.
       </blockquote>
-      <p className="testimonial-author">— Fatima Z., Casablanca</p>
+      <p className="testimonial-author">— Younes T., Berkane</p>
     </div>
   );
 }

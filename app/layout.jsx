@@ -1,4 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import "../styles/reset.css";
+import "../styles/variables.css";
 
 export default function RootLayout({ children }) {
   return (

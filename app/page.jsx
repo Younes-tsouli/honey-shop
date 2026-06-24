@@ -5,8 +5,6 @@ import InfoCard from "@/components/InfoCard/InfoCard";
 import Testimonial from "@/components/Testimonial/Testimonial";
 import Newsletter from "@/components/Newsletter/Newsletter";
 
-import "../styles/reset.css";
-import "../styles/variables.css";
 import "./page.css";
 
 export default function Home() {

@@ -1,15 +1,18 @@
 import React from "react";
 import "./ProductCard.css";
+import Link from "next/link";
 
 export default function ProductCard({ product }) {
   return (
     <article className="product-card">
       <div className="product-image-wrap">
         <img src={product.img} alt={product.name} loading="lazy" />
-        
-        <div className="product-overlay">
-          <button className="product-overlay-btn">Voir les détails</button>
-        </div>
+
+        <Link href="/shop/id">
+          <div className="product-overlay">
+            <button className="product-overlay-btn">Voir les détails</button>
+          </div>
+        </Link>
       </div>
 
       <div className="product-info">

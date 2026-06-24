@@ -1,7 +1,9 @@
 "use client";
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar/Navbar";
 import ProductCard from "@/components/ProductCard/ProductCard";
+
 import "./shop.css";
 
 /* =====================
@@ -50,26 +52,32 @@ const TYPES = [
 ];
 
 const SORT_OPTIONS = [
-  { value: "curated", label: "Sélection Curatée" },
-  { value: "price-asc", label: "Prix croissant" },
+  { value: "curated",    label: "Sélection Curatée" },
+  { value: "price-asc",  label: "Prix croissant" },
   { value: "price-desc", label: "Prix décroissant" },
-  { value: "newest", label: "Nouveautés" },
+  { value: "newest",     label: "Nouveautés" },
 ];
 
 /* =====================
    PAGE SHOP
 ===================== */
 export default function Shop() {
-  const [activeStandards, setActiveStandards] = useState([]);
-  const [sortBy, setSortBy] = useState("curated");
-  const [maxPrice, setMaxPrice] = useState(100);
+  const [maxPrice, setMaxPrice]   = useState(100);
+  const [sortOption, setSortOption] = useState("curated");
 
-  const toggleStandard = (tag) =>
-    setActiveStandards((prev) =>
-      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
-    );
+  // Tri dérivé — calculé à chaque render, pas de state séparé
+  const sortedProducts = [...PRODUCTS]
+    .filter((p) => p.price <= maxPrice)
+    .sort((a, b) => {
+      switch (sortOption) {
+        case "price-asc":  return a.price - b.price;
+        case "price-desc": return b.price - a.price;
+        case "newest":     return b.id - a.id;
+        case "curated":
+        default:           return a.id - b.id;
+      }
+    });
 
-  // Slider progress pour le CSS custom property
   const sliderProgress = ((maxPrice - 15) / (150 - 15)) * 100;
 
   return (
@@ -83,7 +91,8 @@ export default function Shop() {
           <h1 className="shop-header-title">Miel Artisanal &amp; Provisions</h1>
           <p className="shop-header-desc">
             Récoltés durablement dans des prairies sauvages et des vergers
-            ensoleillés. Chaque pot préserve un moment particulier dans le temps.
+            ensoleillés. Chaque pot préserve un moment particulier dans le
+            temps.
           </p>
         </header>
 
@@ -128,15 +137,13 @@ export default function Shop() {
           <section className="shop-products">
             {/* Barre de tri */}
             <div className="sorting-bar">
-              <p className="sorting-results">
-                {PRODUCTS.length} résultats
-              </p>
+              <p className="sorting-results">{sortedProducts.length} résultats</p>
               <div className="sorting-right">
                 <span className="sorting-label">Trier par :</span>
                 <select
                   className="sorting-select"
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
+                  value={sortOption}
+                  onChange={(e) => setSortOption(e.target.value)}
                   aria-label="Critère de tri"
                 >
                   {SORT_OPTIONS.map((opt) => (
@@ -150,8 +157,8 @@ export default function Shop() {
 
             {/* Grille */}
             <div className="products-grid">
-              {PRODUCTS.length > 0 ? (
-                PRODUCTS.map((p) => <ProductCard key={p.id} product={p} />)
+              {sortedProducts.length > 0 ? (
+                sortedProducts.map((p) => <ProductCard key={p.id} product={p} />)
               ) : (
                 <div className="products-empty">
                   <p>Aucun produit ne correspond à vos filtres.</p>

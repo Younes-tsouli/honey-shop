@@ -78,7 +78,7 @@ export default function Shop() {
       }
     });
 
-  const sliderProgress = ((maxPrice - 15) / (150 - 15)) * 100;
+  const sliderProgress = ((maxPrice) / (300)) * 100;
 
   return (
     <>
@@ -117,16 +117,16 @@ export default function Shop() {
             <div className="filter-group">
               <span className="filter-legend">Tranche de Prix</span>
               <div className="price-range-row">
-                <span>15 €</span>
-                <span>{maxPrice} €</span>
+                <span>0 MAD</span>
+                <span>{maxPrice} MAD</span>
               </div>
               <input
                 type="range"
                 className="price-slider"
-                min={15}
-                max={150}
+                min={0}
+                max={300}
                 value={maxPrice}
-                onChange={(e) => setMaxPrice(Number(e.target.value))}
+                onChange={(e) => setMaxPrice(e.target.value)}
                 style={{ "--progress": `${sliderProgress}%` }}
                 aria-label="Prix maximum"
               />

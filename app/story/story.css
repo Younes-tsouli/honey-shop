@@ -1,0 +1,311 @@
+/* =====================
+   STORY PAGE
+===================== */
+.st-page {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  font-family: var(--font-body);
+  padding-top: 72px;
+}
+
+/* =====================
+   HERO
+===================== */
+.st-hero {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 5rem 2rem 3.5rem;
+  text-align: center;
+}
+
+.st-hero-eyebrow {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.st-hero-title {
+  font-family: var(--font-headline);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.st-hero-title em {
+  font-style: italic;
+  color: var(--color-primary);
+}
+
+.st-hero-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* =====================
+   STATS
+===================== */
+.st-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin: 0 4rem 0;
+}
+
+.st-stat {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  border-right: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.st-stat:last-child {
+  border-right: none;
+}
+
+.st-stat-value {
+  font-family: var(--font-headline);
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.st-stat-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* =====================
+   SECTIONS ALTERNÉES
+===================== */
+.st-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 540px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.st-section--reverse {
+  direction: rtl;
+}
+
+.st-section--reverse > * {
+  direction: ltr;
+}
+
+/* Colonne image */
+.st-img-col {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface);
+}
+
+.st-img-wrap {
+  position: absolute;
+  inset: 2.5rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.st-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.st-section:hover .st-img-wrap img {
+  transform: scale(1.03);
+}
+
+/* Bloc doré décalé (comme dans l'exemple Stitch) */
+.st-img-accent {
+  position: absolute;
+  width: 46%;
+  height: 42%;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-md);
+  bottom: 1.5rem;
+  right: 1rem;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+.st-section--reverse .st-img-accent {
+  right: auto;
+  left: 1rem;
+}
+
+/* Colonne texte */
+.st-text-col {
+  padding: 4rem 4rem 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.st-section--reverse .st-text-col {
+  padding: 4rem 3.5rem 4rem 4rem;
+}
+
+.st-eyebrow {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.st-title {
+  font-family: var(--font-headline);
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.st-body {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.st-body:last-of-type {
+  margin-bottom: 2rem;
+}
+
+/* Lien "Découvrir" avec trait */
+.st-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: gap var(--transition), color var(--transition);
+}
+
+.st-link-line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-primary);
+  transition: width var(--transition);
+}
+
+.st-link:hover {
+  gap: 1.5rem;
+}
+
+.st-link:hover .st-link-line {
+  width: 60px;
+}
+
+/* =====================
+   CTA FINAL
+===================== */
+.st-cta {
+  text-align: center;
+  padding: 6rem 2rem;
+  background-color: var(--color-surface);
+}
+
+.st-cta-eyebrow {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.st-cta-title {
+  font-family: var(--font-headline);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.st-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color var(--transition), transform var(--transition),
+              box-shadow var(--transition);
+}
+
+.st-cta-btn:hover {
+  background-color: var(--color-text);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(27, 28, 21, 0.15);
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 900px) {
+  .st-stats {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+  }
+
+  .st-stat:nth-child(2) { border-right: none; }
+  .st-stat:nth-child(3) { border-right: 1px solid var(--color-border); }
+
+  .st-section,
+  .st-section--reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    min-height: unset;
+  }
+
+  .st-img-col {
+    height: 320px;
+  }
+
+  .st-text-col,
+  .st-section--reverse .st-text-col {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .st-img-wrap img { transition: none; }
+}

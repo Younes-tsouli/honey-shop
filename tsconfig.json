@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "components/Navbar/Navbar.jsx", "components/InfoCard/InfoCard.jsx", "components/Hero/Hero.jsx", "components/Footer/Footer.jsx", "app/page.jsx", "app/layout.jsx", "components/ProductCard/ProductCard.jsx", "app/story/page.jsx", "app/shop/page.jsx"  ],
+, "components/Navbar/Navbar.jsx", "components/InfoCard/InfoCard.jsx", "components/Hero/Hero.jsx", "components/Footer/Footer.jsx", "app/page.jsx", "app/layout.jsx", "components/ProductCard/ProductCard.jsx", "app/story/page.jsx", "app/shop/page.jsx", "app/cart/page.jsx"  ],
   "exclude": ["node_modules"]
 }

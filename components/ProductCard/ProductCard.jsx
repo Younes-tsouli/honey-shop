@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
       <div className="product-image-wrap">
         <img src={product.img} alt={product.name} loading="lazy" />
 
-        <Link href="/shop/id">
+        <Link href="/details">
           <div className="product-overlay">
             <button className="product-overlay-btn">Voir les détails</button>
           </div>
